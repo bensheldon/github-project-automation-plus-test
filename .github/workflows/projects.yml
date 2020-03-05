@@ -1,0 +1,14 @@
+
+name: Add to Projects
+
+on: [issues, pull_request]
+
+jobs:
+  add-to-backlog-project-board:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bensheldon/github-project-automation-plus/exact_project_name
+        with:
+          project: Test
+          column: Test
+          repo-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
